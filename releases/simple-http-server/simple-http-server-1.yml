@@ -1,0 +1,16 @@
+---
+packages:
+- name: simple-http-server
+  version: 65591da10f5d7f08569b9317afad2741febd4d5b
+  fingerprint: 65591da10f5d7f08569b9317afad2741febd4d5b
+  sha1: 20b454664043b0fed104b558678b63b2269c61ba
+  dependencies: []
+jobs:
+- name: simple-http-server
+  version: 4c11f94d554451ce74e4ee763af4e2acf582edd0
+  fingerprint: 4c11f94d554451ce74e4ee763af4e2acf582edd0
+  sha1: 63f3fda1a03a63941bf6a310828972be2b301e00
+commit_hash: 1d98e2bf
+uncommitted_changes: true
+name: simple-http-server
+version: '1'
