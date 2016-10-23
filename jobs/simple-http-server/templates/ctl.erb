@@ -1,0 +1,32 @@
+#!/bin/bash
+
+JOB_NAME=simple-http-server
+RUN_DIR=/var/vcap/sys/run/$JOB_NAME
+LOG_DIR=/var/vcap/sys/log/$JOB_NAME
+PACKAGES_DIR=/var/vcap/packages/$JOB_NAME
+PIDFILE=${RUN_DIR}/pid
+PORT=<%= p("server.port") %>
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+    cd $PACKAGES_DIR
+
+    echo $$ > $PIDFILE
+    exec chpst -u vcap:vcap python -m SimpleHTTPServer $PORT \
+         >>$LOG_DIR/$JOB_NAME.log 2>&1
+
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

@@ -1,0 +1,7 @@
+---
+name: simple-http-server
+
+dependencies:
+
+files:
+- simple-http-server/index.html

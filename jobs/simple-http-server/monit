@@ -1,0 +1,5 @@
+check process simple-http-server
+  with pidfile /var/vcap/sys/run/simple-http-server/pid
+  start program "/var/vcap/jobs/simple-http-server/bin/ctl start"
+  stop program "/var/vcap/jobs/simple-http-server/bin/ctl stop"
+  group vcap

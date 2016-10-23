@@ -1,0 +1,10 @@
+---
+name: simple-http-server
+templates:
+  ctl.erb: bin/ctl
+packages:
+- simple-http-server
+properties:
+  server.port:
+    description: "Port on which server is listening"
+    default: 8080
