@@ -56,6 +56,10 @@ name: simple-http-server
 templates:
   ctl.erb: bin/ctl
 packages:
+properties:
+  server.port:
+    description: "Port on which server is listening"
+    default: 8080
 ```
 
 Create `jobs/simple-http-server/monit`:
@@ -90,7 +94,7 @@ set -e -x
 cp -a simple-http-server/index.html $BOSH_INSTALL_TARGET
 ```
 
-Create `jobs/simple-http-server/spec`:
+Update `jobs/simple-http-server/spec`:
 
 ``` yaml
 ---
